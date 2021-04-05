@@ -52,6 +52,10 @@ body header .all_menu .all_menu_inner {
   justify-content: center;
 }
 
+body header .all_menu .all_menu_inner .escmobmenu {
+  display: none;
+}
+
 body header .all_menu .all_menu_inner .logo {
   background-image: url(../images/logo.svg);
   background-repeat: no-repeat;
@@ -421,24 +425,60 @@ body .page .scrollable_content .sc_inner .sc_all_items .sc_item.polish::before {
   background-image: url(../images/polish.png);
 }
 
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body .page .scrollable_content .sc_inner .sc_all_items .sc_item.polish::before {
+    background-image: url(../images/polish@2x.png);
+  }
+}
+
 body .page .scrollable_content .sc_inner .sc_all_items .sc_item.design::before {
   background-image: url(../images/design.png);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body .page .scrollable_content .sc_inner .sc_all_items .sc_item.design::before {
+    background-image: url(../images/design@2x.png);
+  }
 }
 
 body .page .scrollable_content .sc_inner .sc_all_items .sc_item.instrument::before {
   background-image: url(../images/instrument.png);
 }
 
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body .page .scrollable_content .sc_inner .sc_all_items .sc_item.instrument::before {
+    background-image: url(../images/instrument@2x.png);
+  }
+}
+
 body .page .scrollable_content .sc_inner .sc_all_items .sc_item.jewellery::before, body .page .scrollable_content .sc_inner .sc_all_items .sc_item.hair_equip::before {
   background-image: url(../images/jewellery&hair_equip.png);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body .page .scrollable_content .sc_inner .sc_all_items .sc_item.jewellery::before, body .page .scrollable_content .sc_inner .sc_all_items .sc_item.hair_equip::before {
+    background-image: url(../images/jewellery&hair_equip@2x.png);
+  }
 }
 
 body .page .scrollable_content .sc_inner .sc_all_items .sc_item.gel_polish::before {
   background-image: url(../images/gel_polish.png);
 }
 
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body .page .scrollable_content .sc_inner .sc_all_items .sc_item.gel_polish::before {
+    background-image: url(../images/gel_polish@2x.png);
+  }
+}
+
 body .page .scrollable_content .sc_inner .sc_all_items .sc_item.hair_jewelry::before {
   background-image: url(../images/hair_jewelry.png);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body .page .scrollable_content .sc_inner .sc_all_items .sc_item.hair_jewelry::before {
+    background-image: url(../images/hair_jewelry@2x.png);
+  }
 }
 
 body .page .scrollable_content .sc_inner .sc_all_items .sc_item:hover {
@@ -684,6 +724,12 @@ body .popup .popup_area .popup_container .popup_form .form_item .inputEmail_erro
 @media screen and (max-width: 599px) {
   body header {
     height: 50px;
+    background: rgba(255, 255, 255, 0);
+    -webkit-box-shadow: 0px 0px 0px;
+    box-shadow: 0px 0px 0px;
+  }
+  body header.white {
+    background: white;
   }
   body header .all_menu {
     width: 100%;
@@ -693,12 +739,109 @@ body .popup .popup_area .popup_container .popup_form .form_item .inputEmail_erro
   }
   body header .all_menu .all_menu_inner .all_menu_items {
     visibility: hidden;
+    background-color: #fff;
     width: 0;
+    position: absolute;
+  }
+  body header .all_menu .all_menu_inner .all_menu_items.open {
+    visibility: visible;
+    top: 49px;
+    width: 100vw;
+    height: 100vh;
+  }
+  body header .all_menu .all_menu_inner .all_menu_items.open .mobilermenu {
+    display: block;
+    padding: 22px 0 16px;
+    margin: 0 auto;
+    width: 90vw;
+  }
+  body header .all_menu .all_menu_inner .all_menu_items.open .mobilermenu .mcard,
+  body header .all_menu .all_menu_inner .all_menu_items.open .mobilermenu .mlike,
+  body header .all_menu .all_menu_inner .all_menu_items.open .mobilermenu .mlogin {
+    margin: 0;
+    padding: 0 10vw;
+  }
+  body header .all_menu .all_menu_inner .all_menu_items.open .mobilermenu .mcard:first-child,
+  body header .all_menu .all_menu_inner .all_menu_items.open .mobilermenu .mlike:first-child,
+  body header .all_menu .all_menu_inner .all_menu_items.open .mobilermenu .mlogin:first-child {
+    border-right: 1px solid #eaeaea;
+  }
+  body header .all_menu .all_menu_inner .all_menu_items.open .mobilermenu .mcard:last-child,
+  body header .all_menu .all_menu_inner .all_menu_items.open .mobilermenu .mlike:last-child,
+  body header .all_menu .all_menu_inner .all_menu_items.open .mobilermenu .mlogin:last-child {
+    border-left: 1px solid #eaeaea;
+  }
+  body header .all_menu .all_menu_inner .all_menu_items.open .mobilermenu .mlike {
+    background: url(../images/favorites.svg);
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    content: " ";
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    height: 22px;
+    width: 25px;
+  }
+  body header .all_menu .all_menu_inner .all_menu_items.open .mobilermenu .mcard {
+    background: url(../images/bluecard.svg);
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    content: " ";
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    height: 22px;
+    width: 25px;
+  }
+  body header .all_menu .all_menu_inner .all_menu_items.open .mobilermenu .mlogin {
+    background: url(../images/login.svg);
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    background-size: 25px 22px;
+    content: " ";
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    height: 22px;
+    width: 25px;
+  }
+  body header .all_menu .all_menu_inner .all_menu_items.open ul {
+    display: block;
+    margin: 0;
+    padding: 0 0 0 15px;
+    text-align: left;
+    width: 90vw;
+  }
+  body header .all_menu .all_menu_inner .all_menu_items.open ul li.ami {
+    margin: 0;
+  }
+  body header .all_menu .all_menu_inner .all_menu_items.open ul li.ami a.ami {
+    border-bottom: 1px solid #eaeaea;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    font-weight: 600;
+    padding: 20px 0;
+  }
+  body header .all_menu .all_menu_inner .all_menu_items.open ul li.ami a.ami::after {
+    margin-left: 0;
+    margin-top: 25px;
+    position: absolute;
+    left: 90%;
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+  body header .all_menu .all_menu_inner .all_menu_items.open ul li.ami a.ami:last-child {
+    border-top: 2px solid #f08b98;
+    border-bottom: none;
+    padding: 20px 0 0;
+  }
+  body header .all_menu .all_menu_inner .all_menu_items.open ul li.ami:first-child {
+    border-top: 2px solid #f08b98;
   }
   body header .all_menu .all_menu_inner .logo {
     height: 40px;
-    left: calc(50vw - 90px);
-    position: relative;
+    position: absolute;
     width: 114px;
   }
   body header .all_menu .all_menu_inner .hum_menu {
@@ -707,22 +850,53 @@ body .popup .popup_area .popup_container .popup_form .form_item .inputEmail_erro
     content: " ";
     height: 12px;
     margin-left: 10px;
+    position: absolute;
     width: 23px;
+    left: 0px;
+    z-index: 100;
+  }
+  body header .all_menu .all_menu_inner .escmobmenu {
+    background-color: #fff;
+    content: " ";
+    font-size: 30px;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    left: 5px;
+    right: 0;
+    top: 8px;
+    width: 30px;
+  }
+  body header .all_menu .all_menu_inner .rightmenu {
+    position: absolute;
+    right: 0px;
   }
   body header .all_menu .all_menu_inner .rightmenu .like,
   body header .all_menu .all_menu_inner .rightmenu .login {
     display: none;
   }
   body .page .main_page .mp_video {
-    display: none;
-  }
-  body .page .main_page .mp_area {
-    background-image: url(../images/bg_video.png), url(../images/mobile_bg.png);
+    background-image: url(../images/mobile_bg.png);
     background-position: center 0;
     background-repeat: no-repeat;
-    background-size: auto 568px;
-    height: 568px;
+    background-size: auto 100vh;
+    height: 100vh;
+  }
+  body .page .main_page .mp_video video {
+    display: none;
+  }
+  body .page .main_page .mp_video:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.12);
+  }
+  body .page .main_page .mp_area {
     padding-top: 50px;
+    background-image: none;
   }
   body .page .main_page .mp_area .mp_area_inner {
     padding-top: 181px;

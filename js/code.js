@@ -114,6 +114,27 @@ $(document).mouseup(function (e) {
 $(document).bind('touchstart', function (e) {
     hideDatePopup(e);
 });
+$(window).on('scroll', function() {
+  var scrollCoef = 0.0015;
+  var top = $(window).scrollTop()
+  $('.main_page').css({
+    opacity: 1 - top * scrollCoef
+  })
+});
+if (jQuery(window).width() < '599') {
+    $(".hum_menu").click(function() {
+        $(".all_menu_items").addClass("open");
+        $(".hum_menu").hide();
+        $(".escmobmenu").show();
+        $("header").addClass("white");
+    });
+    $(".escmobmenu").click(function() {
+        $(".all_menu_items").removeClass("open");
+        $(".escmobmenu").hide();
+        $(".hum_menu").show();
+        $("header").removeClass("white");
+    });
+};
 $("input")
         .focus(inputFocus)
         .focusout(inputFocusOut);
