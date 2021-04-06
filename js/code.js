@@ -93,20 +93,26 @@ $('.checkbox span').click(function() {
 });
 $("#feedback").click(function() {
     $("#popup").show();
+    if (jQuery(window).width() < '599') {
+            $("header").addClass("white").addClass("shadow");
+    };
 });
 var hideDatePopup = function (e) {
     var div = $("#popup");
     if ((div.is(e.target) && (div.has(e.target).length === 0))) {
         $("#popup").hide();
+        $("header").removeClass("white").removeClass("shadow");
     }
 };
 $(document).on('keydown', function(e){
     if(e.which === 27){ 
         $("#popup").hide();
+        $("header").removeClass("white").removeClass("shadow");
     }
 });
 $(".close").click(function (e) {
     $("#popup").hide();
+    $("header").removeClass("white").removeClass("shadow");
 });
 $(document).mouseup(function (e) {
     hideDatePopup(e);

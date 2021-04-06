@@ -31,7 +31,7 @@ body header {
   height: 70px;
   width: 100%;
   position: fixed;
-  z-index: 10;
+  z-index: 1000;
 }
 
 body header .all_menu {
@@ -104,19 +104,19 @@ body header .all_menu .all_menu_inner .all_menu_items ul li.ami a.ami {
 
 body header .all_menu .all_menu_inner .all_menu_items ul li.ami a.ami::after {
   background-repeat: no-repeat;
-  background-size: 23px 5px;
+  background-size: 36px 14px;
   content: " ";
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   height: 5px;
   margin-left: 5px;
-  width: 10px;
+  width: 12px;
 }
 
 body header .all_menu .all_menu_inner .all_menu_items ul li.ami a.ami.cosmetic::after, body header .all_menu .all_menu_inner .all_menu_items ul li.ami a.ami.equip::after, body header .all_menu .all_menu_inner .all_menu_items ul li.ami a.ami.jewel::after {
-  background-image: url(../images/arrows.svg);
-  background-position: 0 0;
+  background-image: url(../images/s.svg);
+  background-position: -4px -4px;
 }
 
 body header .all_menu .all_menu_inner .all_menu_items ul li.ami a.ami::before {
@@ -136,7 +136,7 @@ body header .all_menu .all_menu_inner .all_menu_items ul li.ami a.ami:hover {
 }
 
 body header .all_menu .all_menu_inner .all_menu_items ul li.ami a.ami:hover::after {
-  background-position: -10px 0;
+  background-position: -20px -4px;
 }
 
 body header .all_menu .all_menu_inner .all_menu_items ul li.ami a.ami:last-child {
@@ -370,12 +370,13 @@ body .page .scrollable_content {
   background-color: #ffffff;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  bottom: -880px;
+  top: calc(100% - 300px);
   height: calc(100vh - 70px);
   left: calc(50% - 650px);
   margin: 0 auto;
   position: absolute;
   text-align: center;
+  vertical-align: bottom;
   width: 1300px;
   z-index: 1;
 }
@@ -384,7 +385,6 @@ body .page .scrollable_content .sc_inner {
   margin: 0 auto;
   padding: 25px 0 35px;
   text-align: center;
-  width: 1070px;
 }
 
 body .page .scrollable_content .sc_inner h2 {
@@ -403,16 +403,19 @@ body .page .scrollable_content .sc_inner .sc_all_items {
 }
 
 body .page .scrollable_content .sc_inner .sc_all_items .sc_item {
-  padding: 0 30px 10px;
+  padding: 0 0 10px;
   cursor: default;
   font-family: MuseoSansCyrl;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
+  width: 140px;
+  margin: 0 10px;
 }
 
 body .page .scrollable_content .sc_inner .sc_all_items .sc_item::before {
   background-repeat: no-repeat;
+  background-size: contain;
   content: " ";
   display: block;
   height: 75px;
@@ -514,27 +517,51 @@ body .popup .popup_area {
   margin-top: calc(50vh - 280px);
   position: fixed;
   width: 504px;
+  height: 560px;
   z-index: 100;
+}
+
+body .popup .popup_area::after {
+  content: '';
+  position: absolute;
+  z-index: 10;
+  height: calc(100% - 50px);
+  top: 20px;
+  bottom: 20px;
+  right: 10px;
+  width: 4px;
+  background: #FAD8DD;
 }
 
 body .popup .popup_area .scroll {
   overflow-y: scroll;
-  height: 520px;
-  margin: 20px 10px 20px 30px;
+  overflow-x: hidden;
+  height: 100%;
+  margin: 0 10px 0 30px;
+  z-index: 100;
   position: relative;
-  width: 460px;
 }
 
-body .popup .popup_area .scroll.scroll::-webkit-scrollbar {
+body .popup .popup_area .scroll::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 4px;
-  background: #fad8dd;
+  background: transparent;
   border-radius: 24px;
 }
 
-body .popup .popup_area .scroll.scroll::-webkit-scrollbar-thumb {
+body .popup .popup_area .scroll::-webkit-scrollbar-thumb {
   background: #f08b98;
   border-radius: 24px;
+}
+
+body .popup .popup_area .scroll::-webkit-scrollbar-track-piece:end {
+  background-color: transparent;
+  margin-bottom: 30px;
+}
+
+body .popup .popup_area .scroll::-webkit-scrollbar-track-piece:start {
+  background-color: transparent;
+  margin-top: 20px;
 }
 
 body .popup .popup_area .popup_container h3 {
@@ -543,10 +570,12 @@ body .popup .popup_area .popup_container h3 {
   line-height: 34px;
   position: relative;
   padding: 0 0 15px;
-  margin: 0;
+  margin: 20px 0 0;
 }
 
 body .popup .popup_area .popup_container .close {
+  background-image: url(../images/cross.svg);
+  background-size: contain;
   content: " ";
   cursor: pointer;
   font-size: 30px;
@@ -556,6 +585,7 @@ body .popup .popup_area .popup_container .close {
   right: 0;
   top: 0;
   width: 30px;
+  margin: 20px 0 0;
 }
 
 body .popup .popup_area .popup_container .popup_form {
@@ -571,7 +601,7 @@ body .popup .popup_area .popup_container .popup_form .button {
   font-weight: 600;
   font-size: 16px;
   line-height: 19px;
-  margin: 0 auto;
+  margin: 0 0 30px;
   padding: 15px 27px;
   text-align: center;
   width: 250px;
@@ -708,17 +738,17 @@ body .popup .popup_area .popup_container .popup_form .form_item .inputEmail_erro
   color: #ff304c;
   display: none;
   position: absolute;
-  top: 55px;
+  top: 75px;
   right: 25px;
 }
 
 body .popup .popup_area .popup_container .popup_form .form_item .inputPhone_errorArea {
   right: 265px;
-  top: 140px;
+  top: 160px;
 }
 
 body .popup .popup_area .popup_container .popup_form .form_item .inputEmail_errorArea {
-  top: 230px;
+  top: 250px;
 }
 
 @media screen and (max-width: 599px) {
@@ -727,6 +757,10 @@ body .popup .popup_area .popup_container .popup_form .form_item .inputEmail_erro
     background: rgba(255, 255, 255, 0);
     -webkit-box-shadow: 0px 0px 0px;
     box-shadow: 0px 0px 0px;
+  }
+  body header.shadow {
+    -webkit-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.132586);
+            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.132586);
   }
   body header.white {
     background: white;
@@ -825,7 +859,7 @@ body .popup .popup_area .popup_container .popup_form .form_item .inputEmail_erro
   }
   body header .all_menu .all_menu_inner .all_menu_items.open ul li.ami a.ami::after {
     margin-left: 0;
-    margin-top: 25px;
+    margin-top: 0;
     position: absolute;
     left: 90%;
     -webkit-transform: rotate(270deg);
@@ -857,6 +891,8 @@ body .popup .popup_area .popup_container .popup_form .form_item .inputEmail_erro
   }
   body header .all_menu .all_menu_inner .escmobmenu {
     background-color: #fff;
+    background-image: url(../images/cross.svg);
+    background-size: contain;
     content: " ";
     font-size: 30px;
     height: 30px;
@@ -908,7 +944,7 @@ body .popup .popup_area .popup_container .popup_form .form_item .inputEmail_erro
     line-height: 50px;
   }
   body .page .scrollable_content {
-    bottom: -710px;
+    top: calc(100% - 170px);
     height: auto;
     left: calc(50% - 48vw);
     width: 95vw;
@@ -923,23 +959,35 @@ body .popup .popup_area .popup_container .popup_form .form_item .inputEmail_erro
   }
   body .page .scrollable_content .sc_inner .sc_all_items {
     display: inline-block;
-    width: 95vw;
+    width: 90vw;
   }
   body .page .scrollable_content .sc_inner .sc_all_items .sc_item {
-    height: 120px;
+    height: 170px;
     padding: 0;
     float: left;
-    margin-bottom: 50px;
+    margin: 0;
     width: 50%;
+  }
+  body .popup {
+    top: 50px;
   }
   body .popup .popup_area {
     border-radius: 0;
+    height: 568px;
     left: calc(50% - 50vw);
     margin-top: 0;
     width: 100vw;
   }
+  body .popup .popup_area::after {
+    top: 30px;
+    right: 5vw;
+  }
+  body .popup .popup_area .popup_container h3 {
+    margin-top: 30px;
+  }
   body .popup .popup_area .popup_container .close {
-    right: calc(100% - 90vw);
+    right: calc(100% - 86vw);
+    margin-top: 30px;
   }
   body .popup .popup_area .popup_container .popup_form .button {
     width: 75%;
@@ -964,9 +1012,20 @@ body .popup .popup_area .popup_container .popup_form .form_item .inputEmail_erro
   body .popup .popup_area .popup_container .popup_form .form_item .input_wrapper textarea {
     width: 85vw;
   }
+  body .popup .popup_area .popup_container .popup_form .form_item input[type="checkbox"] + span {
+    top: -28px;
+  }
   body .popup .popup_area .scroll {
-    overflow-x: hidden;
+    margin: 0 auto;
     width: 90vw;
+  }
+  body .popup .popup_area .scroll::-webkit-scrollbar-track-piece:end {
+    background-color: transparent;
+    margin-bottom: 20px;
+  }
+  body .popup .popup_area .scroll::-webkit-scrollbar-track-piece:start {
+    background-color: transparent;
+    margin-top: 30px;
   }
 }
 /*# sourceMappingURL=style.css.map */
