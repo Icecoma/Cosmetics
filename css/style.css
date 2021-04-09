@@ -1016,7 +1016,7 @@ body .popup .popup_area .popup_container .popup_form .form_item .inputEmail_erro
     width: 85vw;
   }
   body .popup .popup_area .popup_container .popup_form .form_item input[type="checkbox"] + span {
-    top: -28px;
+    top: -15px;
   }
   body .popup .popup_area .scroll {
     margin: 0 auto;
@@ -1029,6 +1029,18 @@ body .popup .popup_area .popup_container .popup_form .form_item .inputEmail_erro
   body .popup .popup_area .scroll::-webkit-scrollbar-track-piece:start {
     background-color: transparent;
     margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  body .popup .popup_area .popup_container .popup_form .form_item input[type="checkbox"] + span {
+    top: -19px;
+  }
+}
+
+@media screen and (max-width: 411px) {
+  body .popup .popup_area .popup_container .popup_form .form_item input[type="checkbox"] + span {
+    top: -35px;
   }
 }
 /*# sourceMappingURL=style.css.map */

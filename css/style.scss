@@ -873,6 +873,7 @@ body {
             }
             .form_item {
               width: 85vw;
+
               .inputName_errorArea,
               .inputEmail_errorArea {
                 right: calc(100% - 80vw);
@@ -896,7 +897,7 @@ body {
                 }
               }
               input[type="checkbox"] + span {
-                top: -28px;
+                top: -15px;
               }
             }
           }
@@ -917,3 +918,14 @@ body {
     } 
   }
 }
+@media screen and (max-width: 568px){
+body .popup .popup_area .popup_container .popup_form .form_item input[type="checkbox"] + span {
+    top: -19px;
+}
+}
+@media screen and (max-width: 411px){
+body .popup .popup_area .popup_container .popup_form .form_item input[type="checkbox"] + span {
+    top: -35px;
+}
+}
+
